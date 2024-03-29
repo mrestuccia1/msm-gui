@@ -1,7 +1,21 @@
 <h1>
   List of all actors
 </h1>
-
+<form action="/actors" method="post">
+    <label for="name">Name:</label><br>
+    <input type="text" id="name" name="name"><br>
+    
+    <label for="dob">Date of Birth (mm/dd/yyyy):</label><br>
+    <input type="text" id="dob" name="dob"><br>
+    
+    <label for="bio">Bio:</label><br>
+    <textarea id="bio" name="bio"></textarea><br>
+    
+    <label for="image">Image:</label><br>
+    <input type="file" id="image" name="image"><br>
+    
+    <button type="submit">Create actor</button>
+</form>
 <hr>
 
 <table border="1">

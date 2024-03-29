@@ -5,7 +5,21 @@
 <a href="/directors">
   Go back
 </a>
-
+<form action="/directors/<%= @the_director.id %>" method="post">
+    <label for="name">Name:</label><br>
+    <input type="text" id="name" name="name" value="<%= @the_director.name %>"><br>
+    
+    <label for="dob">Date of Birth (mm/dd/yyyy):</label><br>
+    <input type="text" id="dob" name="dob" value="<%= @the_director.dob %>"><br>
+    
+    <label for="bio">Bio:</label><br>
+    <textarea id="bio" name="bio"><%= @the_director.bio %></textarea><br>
+    
+    <label for="image">Image:</label><br>
+    <input type="text" id="image" name="image" value="<%= @the_director.image %>"><br>
+    
+    <button type="submit">Update director</button>
+</form>
 <hr>
 
 <dl>

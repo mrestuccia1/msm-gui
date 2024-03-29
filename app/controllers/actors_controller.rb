@@ -14,4 +14,18 @@ class ActorsController < ApplicationController
       
     render({ :template => "actor_templates/show" })
   end
+
+  def add_entry
+    actor = Actor.new(name: params[:name], dob: params[:dob], bio: params[:bio], image: params[:image])
+    actor.save
+    redirect_to '/actors'
+  end
+
+  def edit_entry
+    id = params[:path_id]
+    actor = Actor.find(id)
+    actor.update(name: params[:name], dob: params[:dob], bio: params[:bio], image: params[:image])
+  
+    redirect_to "/actors/#{id}"
+  end
 end

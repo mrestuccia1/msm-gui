@@ -36,4 +36,18 @@ class DirectorsController < ApplicationController
 
     render({ :template => "director_templates/eldest" })
   end
+
+  def add_entry
+    director = Director.new(name: params[:name], dob: params[:dob], bio: params[:bio], image: params[:image])
+    director.save
+    redirect_to '/directors'
+  end
+
+  def edit_entry
+    id = params[:path_id]
+    director = Director.find(id)
+    director.update(name: params[:name], dob: params[:dob], bio: params[:bio], image: params[:image])
+  
+    redirect_to "/directors/#{id}"
+  end
 end
